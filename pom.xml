@@ -94,11 +94,8 @@
             </goals>
             <configuration>
               <rules>
-                <requireJavaVersion>
-                  <version>[1.6,)</version>
-                </requireJavaVersion>
                 <requireMavenVersion>
-                  <version>[2.2.1,)</version>
+                  <version>[3.0.3,)</version>
                 </requireMavenVersion>
               </rules>
             </configuration>
@@ -107,7 +104,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.2</version>
+        <version>2.2.2</version>
         <configuration>
           <pushChanges>false</pushChanges>
           <localCheckout>true</localCheckout>
@@ -138,6 +135,11 @@
               <artifactId>ritz</artifactId>
               <version>${ritz.version}</version>
             </dependency>
+            <dependency>
+              <groupId>codox</groupId>
+              <artifactId>codox</artifactId>
+              <version>${codox.version}</version>
+            </dependency>
           </dependencies>
           <executions>
             <!-- setup zi to process sources and test sources, and run tests -->
@@ -162,6 +164,19 @@
                 <goal>test</goal>
               </goals>
             </execution>
+            <execution>
+              <id>default-site</id>
+              <phase>site</phase>
+              <goals>
+                <goal>marginalia</goal>
+                <goal>codox</goal>
+              </goals>
+              <configuration>
+                <copyright>Copyright (c) 2010, 2011, 2012 Hugo Duncan</copyright>
+                <webSrcDir>https://github.com/pallet/pallet/blob/</webSrcDir>
+                <webHome>http://palletops.com/</webHome>
+              </configuration>
+            </execution>
           </executions>
         </plugin>
         <plugin>
@@ -179,7 +194,7 @@
         <!-- disable pushing of changes on release -->
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.2</version>
+          <version>2.2.2</version>
           <configuration>
             <pushChanges>false</pushChanges>
             <localCheckout>true</localCheckout>
@@ -222,6 +237,16 @@
       </snapshots>
       <id>Maven central</id>
       <url>http://repo1.maven.org/maven2/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <id>sonatype-releases</id>
+      <url>http://oss.sonatype.org/content/repositories/releases</url>
     </pluginRepository>
   </pluginRepositories>
 
@@ -288,5 +313,6 @@
     <clojure.version>1.2.1</clojure.version>
     <ritz.version>0.2.1</ritz.version>
     <zi.version>0.4.4</zi.version>
+    <codox.version>0.4.0</codox.version>
   </properties>
 </project>
