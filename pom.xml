@@ -8,7 +8,7 @@
   </parent>
   <groupId>org.cloudhoist</groupId>
   <artifactId>parent-pom</artifactId>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>0.1.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>parent-pom</name>
   <description>parent pom for projects released to sonatype</description>
@@ -124,7 +124,7 @@
           <version>${zi.version}</version>
           <dependencies>
             <dependency>
-              <groupId>org.clojure</groupId>
+              <groupId>${clojure.groupId}</groupId>
               <artifactId>clojure</artifactId>
               <version>${clojure.version}</version>
             </dependency>
@@ -308,9 +308,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <clojure.groupId>org.clojure</clojure.groupId>
     <clojure.version>1.2.1</clojure.version>
     <ritz.version>0.2.1</ritz.version>
-    <zi.version>0.4.4</zi.version>
+    <zi.version>0.4.5</zi.version>
     <codox.version>0.4.0</codox.version>
   </properties>
 </project>
