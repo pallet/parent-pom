@@ -167,12 +167,12 @@
           <version>2.3.1</version>
         </plugin>
         <plugin>
-	  <!-- disable the Surefire testing plugin -->
-	  <artifactId>maven-surefire-plugin</artifactId>
-	  <version>2.12</version>
-	  <configuration>
-	    <skip>true</skip>
-	  </configuration>
+          <!-- disable the Surefire testing plugin -->
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.12</version>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
         </plugin>
         <!-- disable pushing of changes on release -->
         <plugin>
