@@ -107,23 +107,6 @@
           <groupId>org.cloudhoist.plugin</groupId>
           <artifactId>zi</artifactId>
           <version>${zi.version}</version>
-          <dependencies>
-            <dependency>
-              <groupId>${clojure.groupId}</groupId>
-              <artifactId>clojure</artifactId>
-              <version>${clojure.version}</version>
-            </dependency>
-            <dependency>
-              <groupId>ritz</groupId>
-              <artifactId>ritz</artifactId>
-              <version>${ritz.version}</version>
-            </dependency>
-            <dependency>
-              <groupId>codox</groupId>
-              <artifactId>codox</artifactId>
-              <version>${codox.version}</version>
-            </dependency>
-          </dependencies>
           <executions>
             <!-- setup zi to process sources and test sources, and run tests -->
             <execution>
@@ -257,8 +240,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <clojure.groupId>org.clojure</clojure.groupId>
     <clojure.version>1.2.1</clojure.version>
-    <ritz.version>0.2.1</ritz.version>
-    <zi.version>0.4.5</zi.version>
-    <codox.version>0.4.0</codox.version>
+    <zi.version>0.5.0</zi.version>
   </properties>
 </project>
